@@ -1,7 +1,23 @@
 version: "3"
 
 services:
+
+  # db:
+  #  image: mysql:8.0
+  #  volumes:
+  #    - db_data:/var/lib/mysql
+  #  restart: always
+  #  ports:
+  #    - "3306:3306"
+  #  environment:
+  #    MYSQL_ROOT_PASSWORD: V1ctoria
+  #    MYSQL_DATABASE: dq_api
+  #    MYSQL_USER: dq_api
+  #    MYSQL_PASSWORD: V1ctoria
+
   app:
+    # depends_on:
+    #    - db
     build:
       context: .
     ports:
@@ -9,4 +25,9 @@ services:
     volumes:
       - ./app:/app
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py makemigrations &&
+      python manage.py migrate
+      && python manage.py runserver 0.0.0.0:8000"
+
+volumes:
+    db_data: {}
