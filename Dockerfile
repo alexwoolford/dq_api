@@ -3,6 +3,11 @@ MAINTAINER Alex Woolford
 
 ENV PYTHONUNBUFFERED 1
 
+RUN apk add --update-cache \
+    gcc \
+    libc-dev \
+    mariadb-connector-c-dev
+
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
