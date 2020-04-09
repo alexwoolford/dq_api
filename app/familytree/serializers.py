@@ -22,14 +22,6 @@ class ParentSerializer(serializers.ModelSerializer):
         fields = ["lastname", "firstname", "age", "ts", "relationship_status"]
 
 
-# class AlbumSerializer(serializers.ModelSerializer):
-#     tracks = serializers.StringRelatedField(many=True)
-#
-#     class Meta:
-#         model = Album
-#         fields = ['album_name', 'artist', 'tracks']
-
-
 class ChildrenShowingParentSerializer(serializers.ModelSerializer):
     # children = serializers.StringRelatedField(many=True)
     # parents_firstname = serializers.CharField(read_only=True)
