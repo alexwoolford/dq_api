@@ -104,3 +104,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# OSX custom attributes for folder
+.DS_Store

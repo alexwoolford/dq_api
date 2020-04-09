@@ -1,6 +1,4 @@
-# create databases
-CREATE DATABASE IF NOT EXISTS `dq_api`;
-CREATE DATABASE IF NOT EXISTS `test_dq_api`;
 
-# grant rights
-GRANT ALL ON *.* TO 'dq_api'@'%';
+# grant dq_api permissions on dq_api and test_dq_api
+GRANT ALL ON dq_api.* TO 'dq_api'@'%';
+GRANT ALL ON test_dq_api.* TO 'dq_api'@'%';
