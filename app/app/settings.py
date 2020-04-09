@@ -82,8 +82,8 @@ DATABASES = {
         'NAME': 'dq_api',
         'USER': 'dq_api',
         'PASSWORD': 'V1ctoria',
-        'HOST': 'deepthought.woolford.io',
-        'PORT': '3306',
+        'HOST': 'db',
+        'PORT': '3306'
     }
 }
 

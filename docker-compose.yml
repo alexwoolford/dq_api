@@ -2,22 +2,22 @@ version: "3"
 
 services:
 
-  # db:
-  #  image: mysql:8.0
-  #  volumes:
-  #    - db_data:/var/lib/mysql
-  #  restart: always
-  #  ports:
-  #    - "3306:3306"
-  #  environment:
-  #    MYSQL_ROOT_PASSWORD: V1ctoria
-  #    MYSQL_DATABASE: dq_api
-  #    MYSQL_USER: dq_api
-  #    MYSQL_PASSWORD: V1ctoria
+  db:
+   image: mysql:8.0
+   ports:
+     - "3306:3306"
+   volumes:
+     - db_data:/var/lib/mysql
+   restart: always
+   environment:
+     MYSQL_ROOT_PASSWORD: V1ctoria
+     MYSQL_DATABASE: dq_api
+     MYSQL_USER: dq_api
+     MYSQL_PASSWORD: V1ctoria
 
   app:
-    # depends_on:
-    #    - db
+    depends_on:
+       - db
     build:
       context: .
     ports:
