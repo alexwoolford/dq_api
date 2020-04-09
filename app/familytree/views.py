@@ -1,6 +1,8 @@
 from rest_framework import generics
 from .models import Parent, Child
-from .serializers import ChildSerializer, ParentSerializer, ChildrenShowingParentSerializer, ParentShowingChildrenSerializer
+from .serializers import ChildSerializer, ParentSerializer, \
+                         ChildrenShowingParentSerializer, \
+                         ParentShowingChildrenSerializer
 
 
 class ViewParent(generics.ListAPIView):

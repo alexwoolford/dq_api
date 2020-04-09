@@ -19,7 +19,8 @@ class Child(models.Model):
     lastname = models.CharField(max_length=60)
     age = models.IntegerField()
     ts = models.DateTimeField(default=datetime.now())
-    parent = models.ForeignKey(Parent, on_delete=models.CASCADE, related_name="children")
+    parent = models.ForeignKey(Parent, on_delete=models.CASCADE,
+                               related_name="children")
 
     def __str__(self):
         return '%s: %s' % (self.firstname, self.lastname)
