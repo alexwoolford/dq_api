@@ -83,7 +83,10 @@ DATABASES = {
         'USER': 'dq_api',
         'PASSWORD': 'V1ctoria',
         'HOST': 'db',
-        'PORT': '3306'
+        'PORT': '3306',
+        'TEST': {
+            'NAME': 'test_dq_api',
+        },
     }
 }
 
